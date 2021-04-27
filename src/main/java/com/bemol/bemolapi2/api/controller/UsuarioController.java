@@ -26,17 +26,14 @@ public class UsuarioController {
 	public List<Usuario> listar(){
 		return usuarioRepository.findAll();
 	}
-	
 	@GetMapping("/{usuarioId}")
 	public ResponseEntity<Usuario> buscar (@PathVariable Long usuarioId) {
 		Optional<Usuario> usuario = usuarioRepository.findById(usuarioId);
 		if(usuario.isPresent()) {
 			return ResponseEntity.ok(usuario.get());
 		}
-
 		return ResponseEntity.notFound().build();
 	}
-	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Usuario adicionar(@RequestBody Usuario usuario) {

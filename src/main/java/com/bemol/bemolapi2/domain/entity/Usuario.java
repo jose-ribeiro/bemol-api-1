@@ -1,5 +1,6 @@
 package com.bemol.bemolapi2.domain.entity;
 
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -39,6 +40,8 @@ public class Usuario {
 	@NotNull
 	private String dataNascimento;
 	
+	private List<Endereco> endereco;
+	
 	
 	
 	public Long getId() {
@@ -53,12 +56,7 @@ public class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEamil(String eamil) {
-		this.email = email;
-	}
+
 	public String getCpf() {
 		return cpf;
 	}
@@ -70,6 +68,19 @@ public class Usuario {
 	}
 	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public List<Endereco> getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(List<Endereco> endereco) {
+		this.endereco = endereco;
 	}
 	@Override
 	public int hashCode() {

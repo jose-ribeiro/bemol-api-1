@@ -39,6 +39,8 @@ public class Endereco {
 	private String cep;
 	
 	
+	private Usuario usuario;
+	
 	public Long getId() {
 		return id;
 	}
@@ -80,6 +82,15 @@ public class Endereco {
 	}
 	public void setCep(String cep) {
 		this.cep = cep;
+	}
+	
+	
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	@Override
 	public int hashCode() {
